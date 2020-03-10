@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         plugin = {"pretty",
                 "html:src/test/logs/report"
         },
-        features = "src/test/java/TestSuites/friendsurance.feature",
+        features = "src/test/java/TestSuites/sample.feature",
         glue = {"com/stepdefs", "runner"}
 )
 
