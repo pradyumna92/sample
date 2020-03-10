@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class Hooks {
 
-    String filePath = "C:\\Users\\PRADYUMNA\\ScreenShots\\";
+    String filePath = "ScreenShots\\";
     WebDriver driver;
 
     @Before
