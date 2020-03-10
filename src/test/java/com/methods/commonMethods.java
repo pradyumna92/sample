@@ -4,14 +4,29 @@ import com.pageObjects.*;
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import runner.TestInit;
 
 import java.util.List;
+import java.util.Properties;
 import java.util.Random;
 
-public class commonMethods extends TestInit {
+public class commonMethods {
+
+    private WebDriver driver;
+    private Properties prop;
+
+    public commonMethods() {
+        this.driver = TestInit.getDriver();
+        this.prop = TestInit.getProp();
+    }
+
+    public void launchApp() {
+        driver.get(prop.getProperty("url"));
+    }
+
     public void userClicksOnRegisterButton() {
         LoginPageObjects login = new LoginPageObjects();
         HomePageObjects homepage = new HomePageObjects();
@@ -156,7 +171,4 @@ public class commonMethods extends TestInit {
         expenses.btn_CreateExpense.click();
     }
 
-    public void launchApp() {
-        driver.get(prop.getProperty("url"));
-    }
 }

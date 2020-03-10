@@ -1,5 +1,6 @@
 package com.pageObjects;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -7,9 +8,10 @@ import runner.TestInit;
 
 import java.util.concurrent.TimeUnit;
 
-public class LoginPageObjects extends TestInit {
+public class LoginPageObjects {
 
     public LoginPageObjects() {
+        WebDriver driver = TestInit.getDriver();
         PageFactory.initElements(driver, this);
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }

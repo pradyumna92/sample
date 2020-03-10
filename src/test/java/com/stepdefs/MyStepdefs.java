@@ -1,16 +1,11 @@
 package com.stepdefs;
 
 import com.methods.commonMethods;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.ITestResult;
-import runner.TestInit;
 
-public class MyStepdefs extends TestInit {
+public class MyStepdefs {
+
     commonMethods com = new commonMethods();
 
     @Given("^User is on Expense Tracker HomePage$")
@@ -81,23 +76,5 @@ public class MyStepdefs extends TestInit {
         com.registerNewUser(username, password1, password2);
     }
 
-    @Before
-    public static void init() {
-        String browserName = prop.getProperty("browser");
-        if (browserName.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "C:\\Users\\PRADYUMNA\\Downloads\\chromedriver_win32 (1)\\chromedriver.exe");
-            driver = new ChromeDriver();
-            driver.manage().window().maximize();
 
-        } else if (browserName.equalsIgnoreCase("firefox")) {
-            System.setProperty("webdriver.chrome.driver", ".\\firefoxdriver.exe");
-            driver = new FirefoxDriver();
-            driver.manage().window().maximize();
-        }
-    }
-    @After
-    public void tearDown(ITestResult arg0) {
-        driver.close();
-        driver.quit();
-    }
 }
