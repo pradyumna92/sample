@@ -28,7 +28,7 @@ public class TestInit {
         initProp();
         String browserName = prop.getProperty("browser");
         if (browserName.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "C:\\Users\\PRADYUMNA\\IdeaProjects\\FriendSurance\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "\\chromedriver.exe");
             driver = new ChromeDriver();
             driver.manage().window().maximize();
 
